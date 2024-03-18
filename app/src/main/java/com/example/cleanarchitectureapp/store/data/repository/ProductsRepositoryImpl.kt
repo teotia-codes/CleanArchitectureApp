@@ -1,7 +1,8 @@
 package com.example.cleanarchitectureapp.store.data.repository
 
 import arrow.core.Either
-import com.example.cleanarchitectureapp.store.data.mapper.toGeneralError
+
+import com.example.cleanarchitectureapp.store.data.mapper.toNetworkError
 import com.example.cleanarchitectureapp.store.data.remote.ProductsApi
 import com.example.cleanarchitectureapp.store.domain.model.NetworkError
 import com.example.cleanarchitectureapp.store.domain.model.Product
@@ -13,6 +14,6 @@ class ProductsRepositoryImpl constructor(
     override suspend fun getProducts(): Either<NetworkError, List<Product>> {
         return Either.catch {
             productsApi.getProducts()
-        }.mapLeft { it.toGeneralError() }
+        }.mapLeft { it.toNetworkError() }
     }
 }
