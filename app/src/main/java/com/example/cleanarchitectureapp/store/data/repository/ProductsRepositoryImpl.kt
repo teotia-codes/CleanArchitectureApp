@@ -6,8 +6,9 @@ import com.example.cleanarchitectureapp.store.data.remote.ProductsApi
 import com.example.cleanarchitectureapp.store.domain.model.NetworkError
 import com.example.cleanarchitectureapp.store.domain.model.Product
 import com.example.cleanarchitectureapp.store.domain.repository.ProductsRepository
+import javax.inject.Inject
 
-class ProductsRepositoryImpl constructor(
+class ProductsRepositoryImpl @Inject constructor(
     private val productsApi: ProductsApi
 ):ProductsRepository {
     override suspend fun getProducts(): Either<NetworkError, List<Product>> {

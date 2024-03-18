@@ -28,7 +28,7 @@ fun ProductCard(
         modifier = modifier,
         shape = RoundedCornerShape(10.dp),
         elevation = CardDefaults.cardElevation(defaultElevation = 4.dp),
-        colors = CardDefaults.cardColors(contentColor = Color.White)
+        colors = CardDefaults.cardColors(containerColor = Color.White)
     ) {
         AsyncImage(model = product.image, contentDescription =null,
             modifier = Modifier

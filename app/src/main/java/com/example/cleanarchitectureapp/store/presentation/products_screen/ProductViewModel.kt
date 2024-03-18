@@ -17,7 +17,10 @@ class ProductViewModel @Inject constructor(
     private val productsRepository: ProductsRepository
 ): ViewModel() {
     private val _state = MutableStateFlow(ProductViewState())
-    val state = _state.asStateFlow()             //Implementing encapsulation
+    val state = _state.asStateFlow()
+    init {
+        getProducts()
+    }//Implementing encapsulation
    fun getProducts(){
        viewModelScope.launch {
            _state.update {
