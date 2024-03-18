@@ -1,7 +1,6 @@
 package com.example.cleanarchitectureapp.store.data.repository
 
 import arrow.core.Either
-
 import com.example.cleanarchitectureapp.store.data.mapper.toNetworkError
 import com.example.cleanarchitectureapp.store.data.remote.ProductsApi
 import com.example.cleanarchitectureapp.store.domain.model.NetworkError

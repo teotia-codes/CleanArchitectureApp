@@ -88,4 +88,5 @@ dependencies {
       // For local unit tests
     testImplementation ("com.google.dagger:hilt-android-testing:2.51")
     kaptTest ("com.google.dagger:hilt-compiler:2.51")
+    implementation("androidx.lifecycle:lifecycle-runtime-compose:2.6.2")
 }
