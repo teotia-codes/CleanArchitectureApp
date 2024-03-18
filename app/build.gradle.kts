@@ -1,6 +1,8 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    id("kotlin-kapt")
+    id ("com.google.dagger.hilt.android")
 }
 
 android {
@@ -66,4 +68,24 @@ dependencies {
     androidTestImplementation("androidx.compose.ui:ui-test-junit4")
     debugImplementation("androidx.compose.ui:ui-tooling")
     debugImplementation("androidx.compose.ui:ui-test-manifest")
+    //Arrow
+    implementation("io.arrow-kt:arrow-core:1.2.0")
+    implementation("io.arrow-kt:arrow-fx-coroutines:1.2.0")
+    //Retrofit
+    implementation("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
+    //Coil
+    implementation("io.coil-kt:coil-compose:2.5.0")
+    //dagger Hilt
+    implementation ("com.google.dagger:hilt-android:2.51")
+    kapt ("com.google.dagger:hilt-compiler:2.51")
+    implementation ("androidx.hilt:hilt-navigation-compose:1.0.0")
+
+      // For instrumentation tests
+    androidTestImplementation("com.google.dagger:hilt-android-testing:2.51")
+    kaptAndroidTest ("com.google.dagger:hilt-compiler:2.51")
+
+      // For local unit tests
+    testImplementation ("com.google.dagger:hilt-android-testing:2.51")
+    kaptTest ("com.google.dagger:hilt-compiler:2.51")
 }
